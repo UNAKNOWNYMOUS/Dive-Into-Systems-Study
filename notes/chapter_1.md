@@ -56,5 +56,29 @@ tags: []
 - "Table 3"
 ### 1.2.2. scanf
 - "Table 4"
-### 1.3. Conditionals and Loops
-
+## 1.3. Conditionals and Loops
+- "Table 5"
+- C supports multiway branching by chaining `if` and `else if` statements.
+### 1.3.1. Boolean Values in C
+- C doesn't provide a Boolean type with true or false values. Instead, integer values evaluate to *true* or *false* when used in conditional statements.
+- When used in conditional expressions, any integer expression that is:
+  - zero (0) evaluates to false.
+  - nonzero (any positive or negative value) evaluates to true.
+- The relational operators take operand(s) of the same type and evaluate to zero (false) or nonzero (true).
+- C's logical operators take integer "Boolean" operand(s) and evaluate to either zero (false) or nonzero (true).
+  - short-circuiting = stops evaluating at the first false expression.
+- C's short-circuit logical operator evaluation stops evaluating a logical expression as soon the result is known.
+- It's always best to use parentheses around complex Boolean expressions to make them easier to read.
+### 1.3.2. Loops in C
+#### while Loops
+- "Table 6"
+#### for Loops
+- In C, `for` loops are more general looping constructs.
+- "Table 7"
+- The `for` loop evaluation rules are:
+  - Evaluate initialization one time when first entering the loop.
+  - Evaluate the boolean expression. If it's 0 (false), drop out of the `for` loop (that is, the program is done repeating the loop body statements).
+  - Evaluate the statements inside the loop body.
+  - Evaluate the step expression.
+  - Repeat from step 2.
+- `for` loops are a more natural language construct for definite loops (like iterating over a range of values), whereas `while` loops are a more natural language construct for indefinite loops (like repeating until the user enters an even number).
