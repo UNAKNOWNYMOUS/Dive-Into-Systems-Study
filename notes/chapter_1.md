@@ -82,3 +82,19 @@ tags: []
   - Evaluate the step expression.
   - Repeat from step 2.
 - `for` loops are a more natural language construct for definite loops (like iterating over a range of values), whereas `while` loops are a more natural language construct for indefinite loops (like repeating until the user enters an even number).
+## 1.4. Functions
+- Functions break code into manageable pieces and reduce code duplication.
+- Functions might take zero or more parameters as input and they return a single value of a specific type.
+- A function declaration or prototype specifies the function's name, its return type, and its parameter list (the number and types of all the parameters).
+- A function definition includes the code to be executed when the function is called.
+- All functions in C must be declared before they're called. This can be done by declaring a function prototype or by fully defining the function before calling it.
+- A function call invokes a function, passing specific argument values for the particular call.
+  - A function is called by its name and is passed arguments, with one argument for each corresponding function parameter.
+- Arguments to C functions are passed by value: each function parameters is assigned the value of the corresponding argument passed to it in the function call by the caller. Pass by value semantics mean that any change to a parameter's value in the function (that is, assigning a parameter a new value in the function) is not visible to the caller.
+### 1.4.1. The Stack
+- The execution stack keeps track of the state of active functions in a program.
+- Each function call creates a new stack frame (sometimes called an activation frame or activation record) containing its parameter and local variables values.
+- The frame on the top of the stack is the active frame; it represents the function activation that is currently executing, and only its local variables and parameters are in scope.
+- When a function is called, a new stack frame is created for it (pushed on the top of the stack), and space for its local variables and parameters is allocated in the new frame.
+- When a function returns, its stack frame is removed from the stack (popped from the top of the stack), leaving the caller's stack frame on the top of the stack.
+- "Figure 6"
