@@ -47,5 +47,14 @@ tags: []
   - It's good programming practice to explicitly declare `unsigned char` if you want to use the unsigned version of a `char` variable.
 - The exact number of bytes for each of the C types might vary from one architecture to the next. The sizes in "Table 2" are minimum (and common) sizes for each type.
 #### Arithmetic Operators
+- Arithmetic operators combine values of numeric types.
 - C performs automatic type conversion when an operator combines operands of two different types.
 - The mod operator (`%`) can only take integer-type operands.
+## 1.2. Input/Output (printf and scanf)
+### 1.2.1. printf
+- Placeholders consists of `%` followed by a type specifier letter.
+- "Table 3"
+### 1.2.2. scanf
+- "Table 4"
+### 1.3. Conditionals and Loops
+
