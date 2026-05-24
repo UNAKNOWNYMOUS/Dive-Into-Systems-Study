@@ -98,3 +98,25 @@ tags: []
 - When a function is called, a new stack frame is created for it (pushed on the top of the stack), and space for its local variables and parameters is allocated in the new frame.
 - When a function returns, its stack frame is removed from the stack (popped from the top of the stack), leaving the caller's stack frame on the top of the stack.
 - "Figure 6"
+## 1.5. Arrays and Strings
+- An array is a C construct that creates an ordered collection of data elements of the same type and associates this collection with a single program variable.
+- Ordered means that each element is in a specific position in the collection of values (that is, there is an element in position 0, position 1, and so on), not that the values are necessarily sorted.
+- Arrays come in several flavors, but the basic form is a one-dimensional array, which is useful for implementing list-like data structures and strings in C.
+### 1.5.1. Introduction to Arrays
+- C arrays can store multiple data values of the same type.
+- Statically declared arrays, meaning that the total capacity (the maximum number of elements that can be stored in an array) is fixed and is defined when the array variable is declared.
+- C exposes a low-level array implementation to the programmer and leaves it up to the programmer to implement higher-level functionality.
+- "Table 8"
+- In C, individual array elements are allocated in consecutive locations in the program's memory.
+### 1.5.2. Array Access Methods
+- Access to array element beyond the bounds of the allocated array, the program's runtime behavior is undefined.
+- The C compiler is happy to compile code that accesses array positions beyond the bounds of the array; there is no bounds checking by the compiler or at runtime.
+### 1.5.3. Arrays and Functions
+- In C, the name of the array variable is equivalent to the base address of the array (that is, the memory location of its 0th element).
+- "Figure 7"
+### 1.5.4. Introduction to Strings and the C String Library
+- In C, strings are implemented as arrays of `char` values. Not every character array is used as a C String, but every C string is a character array.
+- Strings in C must end with a special character value, the null character (`'\0'`), to indicate the end of the string.
+  - Strings that end with a null character are said to be null-terminated.
+- Note that most C string library functions expect the call to pass in a character array that has enough capacity for the function to perform its job if not doing so will lead to undefined behavior in your program.
+- C string library functions also require that string values passed to them are correctly formed, with a terminating `\0` character if not functions could continue beyond the end of the array's bounds, leading to undefined behavior that could cause it to crash.
