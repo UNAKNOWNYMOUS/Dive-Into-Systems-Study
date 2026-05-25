@@ -149,4 +149,5 @@ tags: []
 - Understanding the pass-by-value semantics of struct parameters is particularly important when a struct contains a statically declared array field. When such a struct is passed to a function, the struct argument's entire memory contents, including every array element in the array field, is copied to its parameter. If the parameter struct's array contents are changed by the function, those changes will not persist after the function returns. This behavior might seem odd given what we know about how arrays are passed to functions, but it's consistent with the struct-copying behavior described earlier.
 ## 1.7. Summary
 ## 1.8. Exercises
-- [ ] All Chapter 1 Exercises
+- [x] All Chapter 1 Exercises
+- Finished all exercises on-line
