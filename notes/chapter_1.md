@@ -120,3 +120,30 @@ tags: []
   - Strings that end with a null character are said to be null-terminated.
 - Note that most C string library functions expect the call to pass in a character array that has enough capacity for the function to perform its job if not doing so will lead to undefined behavior in your program.
 - C string library functions also require that string values passed to them are correctly formed, with a terminating `\0` character if not functions could continue beyond the end of the array's bounds, leading to undefined behavior that could cause it to crash.
+## 1.6. Structs
+- Arrays and structs are the two ways in which C supports creating collections of data elements.
+- Arrays are used to create an ordered collection of data elements of the same type, whereas structs are used to create a collection of data elements of different types.
+- C is not an object-oriented programming language.
+  - It does, however, support defining structured types, which are like the data part of classes.
+- A `struct` is a type used to represent a heterogeneous collection of data; it's a mechanism for treating a set of different types as a single, coherent unit.
+- There are three steps to defining and using `struct` types in C programs:
+  - Defining a new `struct` type that represents the structure.
+  - Declare variables of the new `struct` type.
+  - Use dot (`.`) notation to access individual field values of the variable.
+### 1.6.1. Defining a Struct Type
+- A struct type definition should appear outside of any function, typically near the top of the program's `.c` file.
+### 1.6.2. Declaring Variables of Struct Types
+- Note that unlike the other types we've encountered so far that consist of a single word, the name of our new struct type is two words.
+### 1.6.3 Accessing Field Values
+- To access field values in a struct variable, use dot notation.
+- "Table 9"
+- "Figure 8"
+- C struct types are lvalues, meaning they can appear on the left side of an assignment statement.
+- "Figure 9"
+#### lvalues
+- An lvalue is an expression that can appear on the left side of an assignment statement.
+- An lvalue is something assignable because it represents a memory location. Variables, struct field, and array elements are lvalues. A fixed array name is not assignable (because the array name is a fixed base address, you can change the elements of the array, but you cannot change where the array itself lives in memory).
+### 1.6.4. Passing Structs to Functions
+- In C, arguments of all types are passed by value to functions.
+- "Figure 10"
+- Understanding the pass-by-value semantics of struct parameters is particularly important when a struct contains a statically declared array field. When such a struct is passed to a function, the struct argument's entire memory contents, including every array element in the array field, is copied to its parameter. If the parameter struct's array contents are changed by the function, those changes will not persist after the function returns. This behavior might seem odd given what we know about how arrays are passed to functions, but it's consistent with the struct-copying behavior described earlier.
