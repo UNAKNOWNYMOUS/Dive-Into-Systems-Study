@@ -19,3 +19,27 @@ tags: []
 - "Figure 11"
 - The top of a program's memory is reserved for use by the operating system, but the remaining parts are usable by the running program.
 - [x] 2.1 Exercises
+## 2.2. C's Pointer Variables
+- C's pointer variables provide a level of indirection to accessing program memory.
+### 2.2.1. Pointer Variables
+- A pointer variable stores the address of a memory location in which a value of a specific type can be stored.
+- A pointer provides a level of indirection for accessing values stored in memory.
+- "Figure 12"
+- C programs most frequently use pointer variables for:
+  - "Pass by pointer" parameters, for writing functions that can modify their argument's value through a pointer parameter.
+  - Dynamic memory allocation.
+#### Rules for Using Pointer Variables
+- Declare a pointer variable.
+- Initialize the pointer variable.
+- "Figure 13"
+- All pointer variables can also be assigned a special value, `NULL`, which represents an invalid address.
+- A null pointer is one whose value is `NULL`.
+- "Figure 14"
+- Null pointers should never be dereferenced.
+- Use the pointer variable.
+- "Figure 15"
+#### Pointer Examples
+- If your program dereferences a pointer variable that does not contain a valid address, the program crashes.
+- Initialize pointer variables to `NULL`!
+  - A program can then text a pointer's value for `NULL` before dereferencing it.
+- [x] 2.2 Exercises
