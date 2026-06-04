@@ -43,3 +43,14 @@ tags: []
 - Initialize pointer variables to `NULL`!
   - A program can then text a pointer's value for `NULL` before dereferencing it.
 - [x] 2.2 Exercises
+## 2.3. Pointers and Functions
+- Pointer parameters provide a mechanism through which functions can modify argument values.
+- The commonly used pass by pointer pattern uses a pointer function parameter that gets the value of the address of some storage location passed to it by the caller.
+- All arguments in C are passed by value and follow pass-by-value semantics: the parameter gets a copy of its argument value, and modifying the parameter's value does not change its argument's value.
+  - In the pass-by-pointer pattern, the parameter still gets the value of its argument, but it is passed the value of an address. Just like in passing base types, changing a pointer parameter's value will not change its argument's value (that is, assigning the parameter to point to a different address will not change the argument's address value). However, by dereferencing a pointer parameter, the function can change the contents of memory that both the parameter and its argument refer to; through a pointer parameter, a function can modify a variable that is visible to the caller after the function returns.
+- Steps for implementing and calling a function with a pass by pointer parameter:
+  - Declare the function parameter to be a pointer to the variable type.
+  - When making the function call, pass in the address of a variable as the argument.
+  - In the body of the function, dereference the pointer parameter to change the argument's value.
+- "Figure 16"
+- [x] 2.3 Exercises
