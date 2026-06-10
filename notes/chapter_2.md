@@ -54,3 +54,24 @@ tags: []
   - In the body of the function, dereference the pointer parameter to change the argument's value.
 - "Figure 16"
 - [x] 2.3 Exercises
+## 2.4. Dynamic Memory Allocation
+- In addition to pass-by-pointer parameters, programs commonly use pointer variables to dynamically allocate memory.
+- Dynamic memory allocation grants flexibility to programs that:
+  - do not know the size of arrays or other data structures until runtime (e.g. the size depends on user input)
+  - need to allow for a variety of input sizes (not just up to some fixed capacity)
+  - want to allocate exactly the size of data structures needed for a particular execution (don't wast capacity)
+  - grow or shrink the sizes of memory allocated as the program runs, reallocating more space when needed and freeing up space when it's no longer required.
+### 2.4.1. Heap Memory
+- Every byte of memory in a program's memory space has an associated address.
+- Everything the program needs to run is in its memory space, and different types of entities reside in different parts of a program's memory space.
+- Because the stack and the heap grow at runtime (as functions are called and return and as dynamic memory is allocated and freed), they are typically far apart in a program's address space to leave a large amount of space for each to grow into as the program runs.
+- "Figure 17"
+- It's important to remember the heap memory is anonymous memory, where "anonymous" means that addresses in the heap are not bound to variable names.
+### 2.4.2. malloc and free
+- The `malloc` function returns a `void *` type, which represents a generic pointer to a non-specified type (or to any type).
+- A call to `malloc` fails if there is not enough free heap memory to satisfy the requested number of bytes to allocate.
+- Because any call to `malloc` can fail, you should always test its return value for NULL (indicating `malloc` failed) before dereferencing the pointer value. Dereferencing a NULL pointer will cause program to crash!
+### 2.4.3. Dynamically Allocated Arrays and Strings
+- "Figure 18"
+- "Table 10"
+- 
