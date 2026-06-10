@@ -74,4 +74,12 @@ tags: []
 ### 2.4.3. Dynamically Allocated Arrays and Strings
 - "Figure 18"
 - "Table 10"
-- 
+#### Heap Memory Management, malloc and free
+- When called, `malloc` needs to find a contiguous chunk of unallocated heap memory space that can satisfy the size of the request.
+- The heap memory manager maintains a free list of unallocated extents of heap memory, where each extent specifies the start address and size of a contiguous unallocated chunk of heap space.
+- Initially, all of heap memory is empty, meaning that the free list has a single extent consisting of the entire heap region. After a program has made some calls to `malloc` and `free`, heap memory can become fragmented, meaning that there are chunks of free heap space interspersed with chunks of allocated heap space. The heap memory manager typically keeps lists of different ranges of sizes of heap space to enable fast searching for a free extent of a particular size. In addition, it implements one or more policies for choosing among multiple free extents that could be used to satisfy a request.
+- The `free` function may seem odd in that it only expects to receive the address of the heap space to free without needing the size of the heap space to free at that address. That's because `malloc` not only allocates the requested memory bytes, but it also allocates a few additional bytes right before the allocated chunk to store a header structure. The header stores metadata about the allocated chunk of heap space, such as the size. As a result, a call to `free` only needs to pass the address of heap memory to free. The implementation of `free` can get the size of the memory to free from the header information that is in memory right before the address passed to `free`.
+### 2.4.4. Pointers to Heap Memory and Functions
+- When passing a dynamically allocated array to a function, the pointer variable argument's value is passed to the function (i.e., the base address of the array in the heap is passed to the function).
+- "Figure 19"
+- [x] 2.4 Exercises
