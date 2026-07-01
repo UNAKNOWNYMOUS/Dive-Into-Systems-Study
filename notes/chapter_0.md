@@ -31,3 +31,10 @@ tags: []
 - How a computer runs a program.
 - How to evaluate systems cost associated with a program's performance.
 - How to leverage the power of parallel computers with parallel programming.
+## Getting Started with This Book
+### Linux, C, and the GNU Compiler
+### Other Types of Notation and Callouts
+### The origins of Linux, GNU, and the Free Open Source Software (FOSS) movement.
+### How to do the readings in this book
+- In computing, errors are not failures -- they are simply experience.
+### This book contains puns
