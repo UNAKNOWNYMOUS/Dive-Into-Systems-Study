@@ -88,15 +88,17 @@ tags: []
 #### Statically Allocated
 - Statically declared arrays are allocated either on the stack (for local variables) or in the data region of memory (for global variables).
 #### Dynamically Allocated
-- The address of the allocated heap space can be assigned to a global or local pointer variable, which then points to the first element of the array.
-- Always check return value of functions and handle error return values.
+- Always check return value of functions and handle error return values
 #### Array Memory Layout
 - Whether an array is statically declared or dynamically allocated via a single call to `malloc`, array elements represent contiguous memory locations (addresses).
-- There is no guarantee that the set of local variables are allocated to contiguous memory locations on the stack (hence, there could be a gap in the addresses between variables).
+- The location of element `i` is at an offset `i` from the base address of the array. The exact address of the ith element depends on the number of bytes of the type stored in the array.
+- There is no guarantee that the set of local variables are allocated to contiguous memory locations on the stack.
 - Constants are often used when defining the total capacity of an array rather than using a literal numeric value.
-- Constants are aliases for C literal values, and are used instead of literals to make the code easier to read and to allow for it to be more easily updated.
+  - Constants are aliases for C literal values, and are used instead of literals to make the code easier to read and to allow for it to be more easily updated.
 ### 2.5.2. Two-Dimensional Arrays
 - C supports multidimensional arrays.
 #### Statically Allocated 2D Arrays
 - "Figure 20"
+- Programs often access the elements of a 2D array by iterating with nested loops.
 #### Two-Dimensional Array Parameters
+
