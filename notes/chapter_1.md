@@ -1,0 +1,28 @@
+---
+id: chapter_1
+aliases: []
+tags: []
+---
+
+# 1. By the C, by the C, by the Beautiful C
+- C is a high-level programming language like other languages you might know.
+- C is an imperative and procedural programming language, which means that a C program is expressed as a sequence of statements (steps) for the computer to execute and that C programs are structured as a set of functions (procedures).
+- C's lack of high-level abstractions might make it seem like a less appealing programming language to use.
+  - However, being less abstracted from the underlying machine makes C easier for a programmer to see and understand the relationship between a program's code and the computer's execution of it.
+- C programmers retain more control over how their programs execute on the hardware, and they can write code that runs more efficiently than equivalent code written using the high-level abstractions provided by other programming languages.
+## 1.1. Getting Started Programming in C
+- "Table 1"
+### 1.1.1. Compiling and Running C Programs
+- "Figure 4"
+- To run a C program, it must first be translated into a form that a computer system can directly execute.
+- A C compiler is a program that translates C source code into a binary executable form that the computer hardware can directly execute.
+- A binary executable consists of a series of 0's and 1's in a well-defined format that a computer can run.
+- "Figure 5"
+#### Detailed Steps
+- Often when compiling with `gcc`, you want to include several command line options. For example, these options enable more compiler warnings and build a binary executable with extra debugging information. `gcc -Wall -g -o hello hello.c`
+- Because the `gcc` command line can be long, frequently the `make` utility is used to simplify compiling C programs and for cleaning up files created by `gcc`. [Using make and writing Makefiles](https://www.cs.swarthmore.edu/~newhall/unixhelp/howto_makefiles.html) are important skills that you develop as you build up experience with C programming.
+### 1.1.2. Variables and C Numeric Types
+- C uses variables as named storage locations for holding data.
+- Thinking about the scope and type of program variables is important to understand the semantics of what your program will do when you run it.
+- A variable's scope defines when the variable has meaning (that is, where and when in your program it can be used) and its lifetime (that is, it could persist for the entire run of a program or only during a function activation).
+- A variable's type defines the range of values it can represent and how those values will be interpreted when performing operations on its data.
