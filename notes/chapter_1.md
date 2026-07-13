@@ -25,4 +25,18 @@ tags: []
 - C uses variables as named storage locations for holding data.
 - Thinking about the scope and type of program variables is important to understand the semantics of what your program will do when you run it.
 - A variable's scope defines when the variable has meaning (that is, where and when in your program it can be used) and its lifetime (that is, it could persist for the entire run of a program or only during a function activation).
-- A variable's type defines the range of values it can represent and how those values will be interpreted when performing operations on its data.
+- A variable's type defines the range of values that it can represent and how those values will be interpreted when performing operations on its data.
+- In C, all variables must be declared before they can be used.
+- A variable can only have a single type.
+- By convention, C variables should be declared at the beginning of their scope (at the top of a `{}` block), before any C statements in that scope.
+- C statements are delineated by `;`.
+### 1.1.3. C Types
+- A string literal is any sequence of characters between double quotes.
+#### C Numeric Types
+- "Table 2"
+- The C standard doesn't specify whether the `char` type is signed or unsigned.
+  - As a result, some implementations might implement `char` as signed integer values and other as unsigned.
+  - It's good programming practice to explicitly declare `unsigned char` if you want to use the unsigned version of a `char`.
+- The exact number of bytes for each of the C types might vary from one architecture to the next. The sizes in "Table 2" are minimum (and common) sizes for each type.
+#### Arithmetic Operators
+- C performs automatic type conversion when an operator combines operands of two different types.
