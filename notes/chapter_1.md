@@ -40,12 +40,14 @@ tags: []
 - The exact number of bytes for each of the C types might vary from one architecture to the next. The sizes in "Table 2" are minimum (and common) sizes for each type.
 #### Arithmetic Operators
 - C performs automatic type conversion when an operator combines operands of two different types.
+- [x] 1.1 Exercises
 ## 1.2. Input/Output (printf and scanf)
 ### 1.2.1. printf
 - "Table 3"
 ### 1.2.2. scanf
 - "Table 4"
 - Prefixing the name of a variable with the `&` operator produces the location of that variables in the program's memory -- the memory address of the variable.
+- [x] 1.2 Exercises
 ## 1.3. Conditionals and Loops
 - "Table 5"
 - In C, the `else` part is optional.
@@ -90,3 +92,4 @@ tags: []
 - The execution stack keeps track of the state of active functions in a program.
 - Each function call creates a new stack frame (sometimes called an activation frame or activation record) containing its parameter and local variable values.
 - "Figure 6"
+- [x] 1.3 Exercises
