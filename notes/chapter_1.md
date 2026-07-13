@@ -43,6 +43,34 @@ tags: []
 ## 1.2. Input/Output (printf and scanf)
 ### 1.2.1. printf
 - "Table 3"
-### 1.2.2 scanf
+### 1.2.2. scanf
 - "Table 4"
 - Prefixing the name of a variable with the `&` operator produces the location of that variables in the program's memory -- the memory address of the variable.
+## 1.3. Conditionals and Loops
+- "Table 5"
+- In C, the `else` part is optional.
+### 1.3.1. Boolean Values in C
+- C doesn't provide a Boolean type with true or false values.
+  - Instead, integer values evaluate to true or false when used in conditional statements.
+- When used in conditional expressions, any integer expression that is:
+  - zero (0) evaluates to false
+  - nonzero (any positive or negative value) evaluates to true
+- C has a set of relational and logical operators for Boolean expressions.
+- The relational operators take operand(s) of the same type and evaluate to zero (false) or nonzero (true).
+- C's logical operators take integer "Boolean" operand(s) and evaluate to either zero (false) or nonzero (true).
+- C's short-circuit logical operator evaluation stops evaluating a logical expression as soon as the result is known.
+- It's always best to use parentheses around complex Boolean expressions to make them easier to read.
+### 1.3.2. Loops in C
+#### while Loops
+- "Table 6"
+#### for Loops
+- In C, `for` loops are more general looping constructs.
+- "Table 7"
+- The C `for` loop evaluation rules are:
+  - Evaluate initialization one time when first entering the loop.
+  - Evaluate the boolean expression. If it's 0 (false), drop out of the `for` loop (that is, the program is done repeating the loop body statements).
+  - Evaluate the statements inside the loop body.
+  - Evaluate the step expression.
+  - Repeat from step (2),
+- In C, `for` loops and `while` loops are equivalent in power, meaning that any `while` loop can be expressed as a `for` loop, and vice versa.
+- Because `for` and `while` loops are equally expressive in C, only one looping construct is needed in the language. However, `for` loops are a more natural language construct for definite loops (like iterating over a range of values), whereas `while` loops are a more natural language construct for indefinite loops (like repeating until the user enters an even number). As a result, C provides both to programmers.
