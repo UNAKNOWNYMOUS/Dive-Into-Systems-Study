@@ -74,3 +74,19 @@ tags: []
   - Repeat from step (2),
 - In C, `for` loops and `while` loops are equivalent in power, meaning that any `while` loop can be expressed as a `for` loop, and vice versa.
 - Because `for` and `while` loops are equally expressive in C, only one looping construct is needed in the language. However, `for` loops are a more natural language construct for definite loops (like iterating over a range of values), whereas `while` loops are a more natural language construct for indefinite loops (like repeating until the user enters an even number). As a result, C provides both to programmers.
+## 1.4. Functions
+- Functions break code into manageable pieces and reduce code duplication.
+- Functions might take zero or more parameters as input and they return a single value of a specific type.
+- A function declaration or prototype specifies the function's name, its return type, and its parameter list (the number and types of all the parameters).
+- A function definition includes the code to be executed when the function is called.
+- All functions in C must be declared before they're called.
+  - This can be done by declaring a function prototype or by fully defining the function before calling it.
+- Functions that don't return a value should specify the `void` return type.
+- As in any programming language that supports functions or procedures, a function call invokes a function, passing specific argument values for the particular call.
+- A function is called by its name and is passed arguments, with one argument for each corresponding function parameter.
+- Arguments to C functions are passed by value: each function parameter is assigned the value of the corresponding argument passed to it in the function call by the caller.
+- Pass by value semantics mean that any change to a parameter's value in the function (that is, assigning a parameter a new value in the function) is not visible to the caller.
+### 1.4.1. The Stack
+- The execution stack keeps track of the state of active functions in a program.
+- Each function call creates a new stack frame (sometimes called an activation frame or activation record) containing its parameter and local variable values.
+- "Figure 6"
