@@ -76,6 +76,7 @@ tags: []
   - Repeat from step (2),
 - In C, `for` loops and `while` loops are equivalent in power, meaning that any `while` loop can be expressed as a `for` loop, and vice versa.
 - Because `for` and `while` loops are equally expressive in C, only one looping construct is needed in the language. However, `for` loops are a more natural language construct for definite loops (like iterating over a range of values), whereas `while` loops are a more natural language construct for indefinite loops (like repeating until the user enters an even number). As a result, C provides both to programmers.
+- [x] 1.3 Exercises
 ## 1.4. Functions
 - Functions break code into manageable pieces and reduce code duplication.
 - Functions might take zero or more parameters as input and they return a single value of a specific type.
@@ -92,4 +93,4 @@ tags: []
 - The execution stack keeps track of the state of active functions in a program.
 - Each function call creates a new stack frame (sometimes called an activation frame or activation record) containing its parameter and local variable values.
 - "Figure 6"
-- [x] 1.3 Exercises
+- [x] 1.4 Exercises
