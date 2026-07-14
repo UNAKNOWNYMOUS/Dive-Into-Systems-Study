@@ -94,3 +94,25 @@ tags: []
 - Each function call creates a new stack frame (sometimes called an activation frame or activation record) containing its parameter and local variable values.
 - "Figure 6"
 - [x] 1.4 Exercises
+## 1.5. Arrays and Strings
+- An array is a C construct that creates an ordered collection of data elements of the same type and associates this collection with a single program variable.
+  - Ordered means that each element is in a specific position in the collection of values (that is, there is an element in position 0, position 1, and so on), not that the values are necessarily sorted.
+### 1.5.1. Introduction to Arrays
+- C arrays can store multiple data values of the same type.
+- Statically declared arrays, meaning that the total capacity (the maximum number of elements that can be stored in an array) is fixed and is defined when the array variable is declared.
+- "Table 8"
+- In C, individual array elements are allocated in consecutive locations in the program's memory.
+### 1.5.2. Array Access Methods
+### 1.5.3. Arrays and Functions
+- To call a function that has an array parameter, pass the name of the array as the argument.
+- In C, the name of the array variable is equivalent to the base address of the array (that is, the memory location of its 0th element).
+- Due to C's pass by value function call semantics, when you pass an array to a function, each element of the array is not individually passed to the function.
+  - In other words, the function isn't receiving a copy of each array element.
+    - Instead, an array parameters gets the value of the array's base address. This behavior implies that when a function modifies the elements of an array that was passed as a parameter, the changes will persist when the function returns.
+- "Figure 7"
+### 1.5.4. Introduction to Strings and the C String Library
+- In C, strings are implemented as arrays of `char` values.
+- Not every character array is used as a C string, but every C string is a character array.
+- Strings in C must end with a special character value, the null character (`\0`), to indicate the end of the string.
+- Strings that end with a null character are said to be null-terminated.
+  - Although all strings in C should be null-terminated.
