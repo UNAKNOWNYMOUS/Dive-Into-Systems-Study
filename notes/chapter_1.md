@@ -116,3 +116,24 @@ tags: []
 - Strings in C must end with a special character value, the null character (`\0`), to indicate the end of the string.
 - Strings that end with a null character are said to be null-terminated.
   - Although all strings in C should be null-terminated.
+## 1.6. Structs
+- Arrays and structs are the two ways in which C supports creating collections of data elements.
+- Arrays are used to create an ordered collection of data elements of the same type, whereas structs are used to create a collection of data elements of different types.
+- C is not an object-oriented language; this, it doesn't support classes.
+  - It does hoes, however support defining structured types, which are like the data part of classes.
+- A `struct` is a type used to represent a heterogeneous collection of data; it's a mechanism for treating a set of different types as a single, coherent unit.
+### 1.6.1. Defining a Struct Type
+### 1.6.2. Declaring Variables of Struct Types
+### 1.6.3. Accessing Field Values
+- "Table 9"
+- To the C compiler, fields are simply storage locations or offsets from the start of the struct variable's memory.
+- "Figure 8"
+- C struct types are lvalues, meaning they can appear on the left side of an assignment statement.
+- "Figure 9"
+#### lvalues
+- An lvalue is an expression that can appear on the left side of an assignment statement.
+  - It's an expression that represents a memory storage location.
+- The name of a statically declared array is not an lvalue (you cannot change the base address of a statically declared array in memory).
+### 1.6.4. Passing Structs to Functions
+- In C, arguments of all types are passed by value to functions.
+- "Figure 10"
