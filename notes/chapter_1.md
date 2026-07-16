@@ -116,7 +116,7 @@ tags: []
 - Strings in C must end with a special character value, the null character (`\0`), to indicate the end of the string.
 - Strings that end with a null character are said to be null-terminated.
   - Although all strings in C should be null-terminated.
-- [ ] 1.5 Exercises
+- [x] 1.5 Exercises
 ## 1.6. Structs
 - Arrays and structs are the two ways in which C supports creating collections of data elements.
 - Arrays are used to create an ordered collection of data elements of the same type, whereas structs are used to create a collection of data elements of different types.
