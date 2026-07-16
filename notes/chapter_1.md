@@ -138,7 +138,7 @@ tags: []
 ### 1.6.4. Passing Structs to Functions
 - In C, arguments of all types are passed by value to functions.
 - "Figure 10"
-- [ ] 1.6 Exercises
+- [x] 1.6 Exercises
 ## 1.7. Summary
 - The lower-level abstractions allow a C programmer more control over how their program accesses its memory and thus more control over their program's efficiency.
 ## 1.8 Exercises
