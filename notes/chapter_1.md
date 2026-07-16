@@ -116,6 +116,7 @@ tags: []
 - Strings in C must end with a special character value, the null character (`\0`), to indicate the end of the string.
 - Strings that end with a null character are said to be null-terminated.
   - Although all strings in C should be null-terminated.
+- [ ] 1.5 Exercises
 ## 1.6. Structs
 - Arrays and structs are the two ways in which C supports creating collections of data elements.
 - Arrays are used to create an ordered collection of data elements of the same type, whereas structs are used to create a collection of data elements of different types.
@@ -137,3 +138,7 @@ tags: []
 ### 1.6.4. Passing Structs to Functions
 - In C, arguments of all types are passed by value to functions.
 - "Figure 10"
+- [ ] 1.6 Exercises
+## 1.7. Summary
+- The lower-level abstractions allow a C programmer more control over how their program accesses its memory and thus more control over their program's efficiency.
+## 1.8 Exercises
