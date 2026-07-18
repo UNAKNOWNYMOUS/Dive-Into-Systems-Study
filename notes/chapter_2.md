@@ -28,4 +28,4 @@ tags: []
 - Stack storage space for local variables and parameters exists only when the function is active (within the stack frame for the function's activation on the stack.)
 - Global variables are stored in the data section. Unlike the stack, the data region does not grow or shrink -- storage space for global persists for the entire run of the program.
 - Finally, the heap portion of memory is the part of a program's address space associated with dynamics memory allocation.
-- [ ] 2.1 Exercises
+- [x] 2.1 Exercises
