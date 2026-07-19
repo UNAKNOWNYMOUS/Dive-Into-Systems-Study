@@ -53,4 +53,4 @@ tags: []
 #### Pointer Examples
 - If your program dereferences a pointer variable that does not contain a valid address, the program crashes.
 - These types of errors exemplify one reason to initialize pointer variables to `NULL`; a program can then test a pointer's value for `NULL` before dereferencing it.
-- [ ] 2.2 Exercises
+- [x] 2.2 Exercises
