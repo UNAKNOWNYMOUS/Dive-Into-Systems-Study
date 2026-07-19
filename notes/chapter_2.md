@@ -54,3 +54,9 @@ tags: []
 - If your program dereferences a pointer variable that does not contain a valid address, the program crashes.
 - These types of errors exemplify one reason to initialize pointer variables to `NULL`; a program can then test a pointer's value for `NULL` before dereferencing it.
 - [x] 2.2 Exercises
+## 2.3. Pointers and Functions
+- Pointer parameters provide a mechanism through which functions can modify argument values.
+- The commonly used pass by pointer pattern uses a pointer function parameter that gets the value of the address of some storage location passed to it by the caller.
+### Pass by Value
+- "Figure 16"
+- [x] 2.3 Exercises
