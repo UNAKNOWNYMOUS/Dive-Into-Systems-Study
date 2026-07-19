@@ -60,3 +60,45 @@ tags: []
 ### Pass by Value
 - "Figure 16"
 - [x] 2.3 Exercises
+## 2.4. Dynamic Memory Allocation
+- Such dynamic memory allocation allows a C program to request more memory as it's running, and a pointer variable stores the address of the dynamically allocated space.
+- Dynamic memory allocation grants flexibility to programs that:
+  - do not know the size of arrays or other data structures until runtime (e.g. the size depends on user input)
+  - need to allow for a variety of input sizes (not just up to some fixed capacity)
+  - want to allocate exactly the size of data structures needed for a particular execution (don't waste capacity)
+  - grow or shrink the sizes of memory allocated as the program runs, reallocating more space when needed and freeing up space when it's no longer required.
+### 2.4.1. Heap Memory
+- Every byte of memory in a program's memory space has an associated address.
+- Everything the program needs to run is in its memory space, and different types of entities reside in different parts of a program's memory space.
+- Because the stack and the heap grow at runtime (as functions are called and return and as dynamic memory is allocated and freed), they are typically far apart in a program's address space to leave a large amount of space for each to grow into as the program runs.
+- "Figure 17"
+- It's important to remember that heap memory is anonymous memory, where "anonymous" means that addresses in the heap are not bound to variable names.
+### 2.4.2. malloc and free
+- `malloc` and `free` are functions in the standard C library (`stdlib`) that a program call to allocate and deallocate memory in the heap.
+- Heap memory must be explicitly allocated (malloc'ed) and deallocated (freed) by a C program.
+- The `malloc` function returns a `void *` type, which represents a generic pointer to a non-specified type (or to any type).
+- When a program calls `malloc` and assigns the result to a pointer variable, the program associates the allocated memory with the type of the pointer variable.
+- A call to `malloc` fails if there is not enough free heap memory to satisfy the requested number of bytes to allocate.
+- Because any call to `malloc` can fail, you should always test its return value for NULL (indicating `malloc`, failed) before dereferencing the pointer value.
+- Dereferencing a NULL pointer will cause your program to crash!
+- When a program no longer needs the heap memory it dynamically allocate with `malloc`, it should explicitly deallocate the memory by calling the `free` function.
+- It's also a good idea to set the pointer's value to `NULL` after calling `free`, so that if an error in the program causes it to be accidentally dereferenced after the call to `free`, the program will crash rather than modify parts of heap memory that have been reallocated by subsequent calls to `malloc`.
+- Such unintended memory references can result in undefined program behavior that is often very difficult to debug, whereas a null pointer dereference will fail immediately, making it a relatively easy bug to find and to fix.
+### 2.4.3. Dynamically Allocated Arrays and Strings
+- "Figure 18"
+- Note that while `malloc` returns a pointer to dynamically allocated space in heap memory, C programs store the pointer to heap locations on the stack.
+- The pointer variables contain only the base address (the starting address) of the array storage space in the heap.
+- While a single call to `malloc` results in a chunk of memory of the requested number of bytes being allocated, multiple calls to `malloc` will not result in heap addresses that are contiguous (on most systems).
+- "Table 10"
+#### Heap Memory Management, malloc and free
+- The C standard library implements `malloc` and `free`, which are the programming interface to its heap memory manager.
+- When called, `malloc` needs to find a contiguous chunk of unallocated heap memory space that can satisfy the size of the request.
+- The heap memory manager maintains a free list of unallocated extents of heap memory, where each extent specifies the start address and size of a contiguous un allocated chunk of heap space.
+- Initially, all of heap memory is empty, meaning that the free list has a single extent consisting of the entire heap region.
+- After a program has made some calls to `malloc` and `free`, heap memory can become fragmented, meaning that there are chunks of free heap space interspersed with chunks of allocated heap space.
+- The heap memory manager typically keeps lists of different ranges of sizes of heap space to enable fast searching for a free extent of a particular size.
+- In addition, it implements one or more policies for choosing among multiple free extents that could be used to satisfy a request.
+- The `free` function may seem odd in that it only expects to receive the address of the heap space to free without needing the size of the heap space to free at that address. That's because `malloc` not only allocates the requested memory bytes, but it also allocates a few additional bytes right before the allocated chunk to store a header structure. The header stores metadata about the allocated chunk of heap space, such as size. As a result, a call to `free` only needs to pass the address of heap memory to free. The implementation of `free` can get the size of the memory to free from the header information that is in the memory right before the address passed to `free`.
+### 2.4.4. Pointers to Heap Memory and Functions
+- "Figure 19"
+- [ ] 2.4 Exercises
