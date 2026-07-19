@@ -29,3 +29,28 @@ tags: []
 - Global variables are stored in the data section. Unlike the stack, the data region does not grow or shrink -- storage space for global persists for the entire run of the program.
 - Finally, the heap portion of memory is the part of a program's address space associated with dynamics memory allocation.
 - [x] 2.1 Exercises
+## 2.2. C's Pointer Variables
+- C's pointer variables provide a level of indirection to accessing program memory.
+- C programmers can:
+  - implement functions whose parameters can modify values in the caller's stack frame.
+  - dynamically allocate (and deallocate) program memory at runtime when the program needs it.
+  - efficiently pass large data structures to functions.
+  - created linked dynamic data structures.
+  - interpret bytes of program memory in different ways.
+### 2.2.1. Pointer Variables
+- A pointer variable stores the address of a memory location in which a value of a specific type can be stored.
+- A pointer provides a level of indirection for accessing values stored in memory.
+- "Figure 12"
+- C programs most frequently use pointer variables for:
+  - "Pass by pointer" parameters, for writing functions that can modify their argument's value through a pointer parameter.
+- Dynamic memory allocation, for writing programs that allocate (and free) space as the program runs. Dynamic memory is commonly used for dynamically allocating arrays. It is useful when a programmer doesn't know the size of a data structure at compile time (e.g., the array size depends on a user input at runtime). It also enables data structures to be resized as the program runs.
+#### Rules for Using Pointer Variables
+- "Figure 13"
+- All pointer variables can also be assigned a special value, NULL, which represents an invalid address.
+- While a null pointer (one whose value is `NULL`) should never be used to access memory, the value `NULL` is useful for testing a pointer variable to see if it points to a valid memory address.
+- "Figure 14"
+- "Figure 15"
+#### Pointer Examples
+- If your program dereferences a pointer variable that does not contain a valid address, the program crashes.
+- These types of errors exemplify one reason to initialize pointer variables to `NULL`; a program can then test a pointer's value for `NULL` before dereferencing it.
+- [ ] 2.2 Exercises
