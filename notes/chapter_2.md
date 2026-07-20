@@ -101,4 +101,4 @@ tags: []
 - The `free` function may seem odd in that it only expects to receive the address of the heap space to free without needing the size of the heap space to free at that address. That's because `malloc` not only allocates the requested memory bytes, but it also allocates a few additional bytes right before the allocated chunk to store a header structure. The header stores metadata about the allocated chunk of heap space, such as size. As a result, a call to `free` only needs to pass the address of heap memory to free. The implementation of `free` can get the size of the memory to free from the header information that is in the memory right before the address passed to `free`.
 ### 2.4.4. Pointers to Heap Memory and Functions
 - "Figure 19"
-- [ ] 2.4 Exercises
+- [x] 2.4 Exercises
