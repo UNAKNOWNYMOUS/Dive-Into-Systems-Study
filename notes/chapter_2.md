@@ -102,3 +102,11 @@ tags: []
 ### 2.4.4. Pointers to Heap Memory and Functions
 - "Figure 19"
 - [x] 2.4 Exercises
+## 2.5. Arrays in C
+### 2.5.1. Single-Dimensional Arrays
+#### Statically Allocated
+- Statically declared arrays are allocated either on the stack (for local variables) or in the data region of memory (for global variables).
+#### Dynamically Allocated
+#### Array Memory Layout
+- Whether an array is statically declared or dynamically allocated via a single call to `malloc`, array elements represent contiguous memory locations (addresses).
+- 
