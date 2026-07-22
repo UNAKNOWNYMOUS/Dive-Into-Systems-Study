@@ -102,11 +102,34 @@ tags: []
 ### 2.4.4. Pointers to Heap Memory and Functions
 - "Figure 19"
 - [x] 2.4 Exercises
-## 2.5. Arrays in C
+## 2.5. Arrays
 ### 2.5.1. Single-Dimensional Arrays
 #### Statically Allocated
 - Statically declared arrays are allocated either on the stack (for local variables) or in the data region of memory (for global variables).
 #### Dynamically Allocated
+- Calling the `malloc` function dynamically allocates an array on the heap at runtime. The address of the allocated heap space can be assigned to a global or local pointer variable, which then points to the first element of the array.
 #### Array Memory Layout
 - Whether an array is statically declared or dynamically allocated via a single call to `malloc`, array elements represent contiguous memory locations (addresses).
-- 
+- The location of element `i` is at an offset `i` from the base address of the array.
+- The exact address of the ith element depends on the number of bytes of the type stored in the array.
+- There is no guarantee that the set of local variables are allocated to contiguous memory locations on the stack (hence, there could be a gap in the addresses between the end of `iarray` and the start of `carray`, as shown in this example.)
+- Constants are often used when defining the total capacity of an array rather than using a literal numeric value. Constants are aliases for C literal values, and are used instead of literals to make the code easier to read and to allow for it to be more easily updated.
+### 2.5.2. Two-Dimensional Arrays
+- C supports multidimensional arrays.
+#### Statically Allocated 2D Arrays
+- "Figure 20"
+- Programs often access the elements of a 2D array by iterating with nested loops.
+### Two-Dimensional Array Parameters
+- For multidimensional array parameters, you must indicate that the parameter is a multidimensional array, but you can leave the size of the first dimension unspecified (for good generic design). The sizes of other dimensions must be fully specified so that the compiler can generate the correct offsets into the array.
+- The column dimension must be specified in the parameter definition of a 2D array so that the compiler can calculate the offset from the base address of the 2D array to the start of a particular row of elements. The offset calculation follows from the layout of 2D arrays in memory.
+#### Two-Dimensional Array Memory Layout
+- Statically allocated 2D arrays are arranged in memory in row-major order, meaning that all of row 0's elements come first, followed by all of row 1's elements, and so on.
+- "Figure 21"
+- Note that all array elements are allocated to contiguous memory addresses.
+#### Dynamically Allocated 2D Arrays
+#### Method 1: Memory-Efficient Allocation
+- "Figure 22"
+#### Method 1 (Single malloc) and Function Parameters
+#### Methos 2: The Programmer-Friendly Way
+- "Figure 23"
+#### Method 2 (An Array of Arrays) and Function Parameters
