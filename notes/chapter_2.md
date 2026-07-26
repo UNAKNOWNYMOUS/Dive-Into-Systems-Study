@@ -133,3 +133,14 @@ tags: []
 #### Methos 2: The Programmer-Friendly Way
 - "Figure 23"
 #### Method 2 (An Array of Arrays) and Function Parameters
+## 2.6. Strings and the String Library
+### 2.6.1. C's Support for Statically Allocated Strings (Arrays of char)
+- C does not support a separate string type, but a string can be implemented in C programs using an array of `char` values that is terminated by a special null character value `'\0'`.
+- The terminating null character identifies the end of the sequence of character values that make up a string.
+- Not every character array is a C string, but every C string is an array of `char` values.
+### 2.6.2. Dynamically Allocating Strings
+#### C String Functions and Destination Memory
+### 2.6.3. Libraries for Manipulating C Strings and Characters
+- The name of a statically declared array variable is not a valid lvalue (its base address in memory cannot be changed).
+#### strlen, strcpy, strncpy
+#### strcmp, strncmp
