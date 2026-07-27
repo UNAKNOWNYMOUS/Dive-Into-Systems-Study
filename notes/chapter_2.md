@@ -136,19 +136,17 @@ tags: []
 - [ ] 2.5 Exercises
 ## 2.6. Strings and the String Library
 ### 2.6.1. C's Support for Statically Allocated Strings (Arrays of char)
-- C does not support a string type, but a string can be implemented in C programs using an array of `char` values that is terminated by a special null character value `'\0'`.
-- The terminating null character identifies the end of the sequence of character values that make up a string.
-- Not every character array is a C string, but every C string is an array of `char` values.
+- C does not support a separate string type, but a string can be implemented in C programs using an array of `char` values that is terminated by a special null character value `'\0'`. The terminating null character identifies the end of the sequence of character values that make up a string. Not every character array is a C string, but every C string is an array of `char` values.
 ### 2.6.2. Dynamically Allocating Strings
 #### C String Functions and Destination Memory
 ### 2.6.3. Libraries for Manipulating C Strings and Characters
-#### `char []` and `char *` Parameters and `char *` Return Type
-- `char *` is more commonly used for specifying the type of string (array of `char`) parameters.
-- If a function returns a string (its return type is a `char *`), its return value can only be assigned to a variable whose type is also `char *`; it cannot be assigned to a statically allocated array variable. This restriction exists because the name of a statically declared array variable is not a valid lvalue (its base address in memory cannot be changed), so it cannot be assigned to a `char *` return value.
+- When using C string library functions, it's important to remember that most do not allocate space for the strings they manipulate, nor do they check that you pass in valid strings; your program must allocate space for the strings that the C string library will use. Furthermore, if the library function modifies the passed string, the caller needs to ensure that the string is correctly formatted (that is, it has a terminating `'\0'` character at the end). Calling string library functions with bad array argument values will often cause a program to crash. The documentation (for example, manual pages) for different library functions specifies whether the library function allocates space or if the caller is responsible for passing in allocated space to the library function.
+#### `char[]` and `char *` Parameters and `char *` Return Type
+- If a function returns a string (its return type is a `char *`), its return value can only be assigned to a variable whose type is also `char *`; it cannot be assigned to a statically allocated array variable. This restriction exists because the name of a statically declared array variable is not a valid lvalue (its base address in memory cannot be changed), so it cannot be assigned a `char *` return value.
 #### strlen, strcpy, strncpy
 #### strcmp, strncmp
 #### strcat, strstr, strchr
-#### strtok, strotok_r
+#### strtok, strtok_r
 - A token refers to a subsequence of characters in a string separated by any number of delimiter characters of the programmer's choosing.
 #### sprintf
 #### Functions for Individual Character Values
