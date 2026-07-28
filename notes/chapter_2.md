@@ -151,4 +151,4 @@ tags: []
 #### sprintf
 #### Functions for Individual Character Values
 #### Functions to Convert Strings to Other Types
-- [ ] 2.6 Exercises
+- [x] 2.6 Exercises
