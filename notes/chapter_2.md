@@ -152,3 +152,16 @@ tags: []
 #### Functions for Individual Character Values
 #### Functions to Convert Strings to Other Types
 - [x] 2.6 Exercises
+## 2.7. C Structs
+### 2.7.1. Review of the C struct Type
+- A struct type represents a heterogeneous collection of data; it's a mechanism for treating a set of different types as a single, coherent unit.
+- There are three steps to defining and using `struct` types in C programs:
+  - Define a `struct` type that defines the field values and their types.
+  - Declare variables of the `struct` type.
+  - Use dot notation to access individual field values in the variable.
+- In C, structs are lvalues (they can appear on the left-hand side of an assignment statement). The value of a `struct` variable is the contents of its memory (all of the bytes making up its field values). When calling functions with `struct` parameters, the value of the `struct` argument (a copy of all of the bytes of all of its fields) gets copied to the `struct` function parameter.
+- When programming with structs, and in particular when combining structs and arrays, it's critical to carefully consider the type of every expression. Each field in a `struct` represents a specific type, and the syntax for accessing field values and the semantics of passing individual values to functions follow those of their specific type.
+- When working with structs, it's particularly important to think about the types of the `struct` and its fields. For example, when passing a `struct` to a function, the parameter gets a copy of the struct's value (a copy of all bytes from the argument). Consequently, changes to the parameter's field values do not change the argument's value.
+- When passing a field of a `struct` to a function, the semantics match the type of the field (the type of the function's parameter).
+### 2.7.2. Pointers and Structs
+
